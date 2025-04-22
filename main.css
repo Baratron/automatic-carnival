@@ -1029,7 +1029,9 @@ a {
     background: #eff2fb;
     border-radius: 6px;
     box-shadow: 0 5px 6px 0 #cfdafe;
-    cursor: pointer
+    cursor: pointer;
+    text-align: center;
+    
 }
 
 .animate {
