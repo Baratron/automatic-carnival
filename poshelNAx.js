@@ -1,9 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('start').addEventListener('click', () => {
 
-        let list = document.querySelectorAll('.item img');
+        let list = document.querySelectorAll('.item');
         for(let cell of list){
-            if(cell.style.display == "inline") cell.style.display = "none";
+            cell.style.background = "#eff2fb";
+            cell.classList.remove('itemAnim');
+            if(cell.querySelector('img').style.display == "inline"){
+                cell.querySelector('img').style.display = "none";
+            } 
         };
 
         let cellCount = Math.ceil(getSurprise(1, 4));
@@ -13,6 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
         for(let i = 0; i < cellCount; ++i){
             let cellIndex = Math.ceil(getSurprise(0, (cellNames.length - 1)));
             let cellCoordinate = cellNames[cellIndex];
+            document.getElementById(`${cellCoordinate}`).classList.add('itemAnim');
+            document.getElementById(`${cellCoordinate}`).style.background = "white";
             document.getElementById(`${cellCoordinate}`).querySelector('img').style.display = "inline";       
         };
         
